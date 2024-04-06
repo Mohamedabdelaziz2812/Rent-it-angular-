@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faBell } from '@fortawesome/free-regular-svg-icons';
+import { faBell, faUser } from '@fortawesome/free-regular-svg-icons';
 import { AuthenticationService } from '../services/authentication.service';
 import { VisibilityService } from '../services/visability.service';
 import { Router } from '@angular/router';
@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
     
   }
   navBarisLoggedIn = false;
-
+  faUser = faUser
   fabell = faBell;
   constructor(
     private auth: AuthenticationService,

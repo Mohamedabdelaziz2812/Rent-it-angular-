@@ -7,13 +7,11 @@ import { AuthenticationService } from './services/authentication.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
-  isVisible : boolean = true;
   constructor(private auth : AuthenticationService){}
   ngOnInit(): void {
-    this.auth.isLoggedIn$.subscribe((isLoggedIn)=>{
-      this.navBarisLoggedIn = isLoggedIn;
-         });
+   if(localStorage.getItem("token")){
+   this.auth.isLoggedIn$.next(true);
+   }
   }
   title = 'rentit';
-  navBarisLoggedIn = false;
 }

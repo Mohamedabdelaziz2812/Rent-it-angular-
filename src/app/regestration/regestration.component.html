@@ -47,7 +47,7 @@
     
     
             <div class="hstack gap-3 px-5 mt-3 d-flex justify-content-center pb-4" >
-                <button type="submit" class="btn btn-primary d-flex justify-content-center align-items-center w-75 rounded-5 icon-link-hover" (click)="onRegister() "> Register </button>
+                <button type="submit" class="btn btn-primary d-flex justify-content-center align-items-center w-75 rounded-5 icon-link-hover" (click)="onRegister()" [disabled]="RegisterForm.invalid"> Register </button>
             </div>
             <div class="text-muted fr px-4 pb-2 mb-3">
                 Already have account? <a id="forget" routerLink="/login"> Login </a>

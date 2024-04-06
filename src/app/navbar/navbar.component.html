@@ -28,8 +28,9 @@
       </ul>
 
       <form class="d-flex search-login">
+        <i routerLink="User/Datails" class="profile fa-duotone fa-user"></i>
 
-        <fa-icon [icon]="fabell" class="fa-bell mx-4"></fa-icon>
+        <fa-icon *ngIf="navBarisLoggedIn"  routerLink="User/Details" [icon]="faUser" class="fa-bell mx-4"></fa-icon>
 
     
 

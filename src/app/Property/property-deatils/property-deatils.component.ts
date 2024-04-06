@@ -18,6 +18,20 @@ import { AddRentDto } from '../../Types/AddRentDto';
 export class PropertyDeatilsComponent implements OnInit {
   propertyById: any | PropertyDetails;
   RentingForm: FormGroup;
+  AddReview: FormGroup;
+  
+  
+
+  HandleReview(id: any, e: MouseEvent) {
+    e.preventDefault();
+
+    // let fd = new FormData();
+    // fd.append('Review', this.AddReview.value.Review);
+    this.PropertyServices.AddReview(id, this.AddReview.value.Review).subscribe((respnse) => {
+      console.log('eshta awiii');
+    });
+  }
+
   RentProperty(id: number, e: MouseEvent) {
     e.preventDefault();
     let fd = new FormData();
@@ -42,6 +56,9 @@ export class PropertyDeatilsComponent implements OnInit {
       Checkin_date: [, Validators.required],
       Checkout_date: [, Validators.required],
       NumOfGuests: [, Validators.required],
+    });
+    this.AddReview = this.fb.group({
+      Review: ['', Validators.required],
     });
   }
 

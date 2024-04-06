@@ -1,6 +1,6 @@
 <p>property-deatils works!</p>
 <section id="property-galley" class="pt-4 pb-4">
-  <!-- <pre>{{ propertyById | json }}</pre> -->
+  <pre>{{ propertyById | json }}</pre>
 
   <div class="container">
     <div id="property-galley">
@@ -90,7 +90,7 @@
                 class="btn btn-primary"
                 style="margin-left: 50px"
                 data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
+                data-bs-target="#RentFormID"
               >
                 Check Availability
               </button>
@@ -133,20 +133,19 @@
           </div>
           <!------------------- End of description ---------------------->
           <!------------------- start of amneties ---------------------->
-
           <div id="amneties" class="py-4">
             <h4 class="pb-2">Amenities</h4>
-            <div class="row">
-              <div class="col-md-6 d-flex">
+
+            <div class="row d-flex align-items-center">
+              <div
+                class="col-lg-3 col-md-6 col-12"
+                *ngFor="let item of propertyById.attributes; let i = index"
+              >
                 <i class="bi bi-wifi me-3"></i>
-                <p>WIFI</p>
-              </div>
-              <div class="col-md-6 d-flex">
-                <i class="bi bi-tv me-3"></i>
-                <p>TV</p>
+                <p>{{ item.name }}</p>
               </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-md-6 d-flex">
                 <i class="bi bi-snow me-3"></i>
                 <p>AC</p>
@@ -155,8 +154,8 @@
                 <i class="bi bi-car-front-fill me-3"></i>
                 <p>Car parking</p>
               </div>
-            </div>
-            <div class="row">
+            </div> -->
+            <!-- <div class="row">
               <div class="col-md-6 d-flex">
                 <i class="bi bi-water me-3"></i>
                 <p>Water front</p>
@@ -165,8 +164,8 @@
                 <i class="bi bi-badge-wc me-3"></i>
                 <p>WIFI</p>
               </div>
-            </div>
-            <div class="row">
+            </div> -->
+            <!-- <div class="row">
               <div class="col-md-6 d-flex">
                 <i class="bi bi-wifi me-3"></i>
                 <p>WIFI</p>
@@ -175,8 +174,8 @@
                 <i class="bi bi-wifi me-3"></i>
                 <p>Washer</p>
               </div>
-            </div>
-            <div class="row pb-3">
+            </div> -->
+            <!-- <div class="row pb-3">
               <div class="col-md-6 d-flex">
                 <i class="bi bi-cake me-3"></i>
                 <p>Kitchen</p>
@@ -185,121 +184,10 @@
                 <i class="bi bi-wifi me-3"></i>
                 <p>WIFI</p>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <!------------------- end of amenetirs ---------------------->
-          <!------------------- start of reservation ---------------------->
-
-          <!-- <div class="col-md-4 " id="reservation">
-          <div class="row">
-       
-            <div class="calendar light p-50 w-100">
-              <div class="calendar-header">
-                  <h2 >271$ <span class="night">night</span></h2>
-              </div>
-
-              <div class="calendar-body">
-
-                <div class="row g-2">
-                  <div class="col-md">
-                    <div class="form-floating">
-                      <input type="date" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="mdo@example.com">
-                      <label for="floatingInputGrid">CHEK-IN</label>
-                    </div>
-                  </div>
-
-                  <div class="col-md">
-                    <div class="form-floating">
-                      <input type="date" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="mdo@example.com">
-                      <label for="floatingInputGrid">CHEK-OUT</label>
-                    </div>
-                  </div>
-                 
-                </div>
-
-                <div class="accordion pt-3" id="accordionExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        GUESTS
-                      </button>
-                      
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <div class="conatiner-fluid">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <h2 class="count-name">Adults</h2><h2 class="count-name2">Age +13</h2>
-                            </div>
-                              <div class="col-md-6 d-flex justify-content-center align-items-center ">
-                                <div class="wrapper d-flex justify-content-center align-items-center">
-                                  <span class="minus">-</span>
-                                  <span class="num">01</span>
-                                  <span class="plus">+</span>
-                                </div>
-                              </div>
-
-
-                              <div class="col-md-6">
-                                <h2 class="count-name">Children</h2><h2 class="count-name2">Ages 2–12</h2>
-                              </div>
-                                <div class="col-md-6 d-flex justify-content-center align-items-center ">
-                                  <div class="wrapper d-flex justify-content-center align-items-center">
-                                    <span class="minus">-</span>
-                                    <span class="num">01</span>
-                                    <span class="plus">+</span>
-                                  </div>
-                                </div>
-
-
-                                <div class="col-md-6">
-                                  <h2 class="count-name">Infants</h2><h2 class="count-name2">Under 2</h2>
-                                </div>
-                                  <div class="col-md-6 d-flex justify-content-center align-items-center ">
-                                    <div class="wrapper d-flex justify-content-center align-items-center">
-                                      <span class="minus">-</span>
-                                      <span class="num">01</span>
-                                      <span class="plus">+</span>
-                                    </div>
-                                  </div>
-
-
-                                  <div class="col-md-6">
-                                    <h2 class="count-name">Pets</h2><h2 class="count-name3">Bringing a service animal?</h2>
-                                  </div>
-                                    <div class="col-md-6 d-flex justify-content-center align-items-center ">
-                                      <div class="wrapper d-flex justify-content-center align-items-center">
-                                        <span class="minus">-</span>
-                                        <span class="num">01</span>
-                                        <span class="plus">+</span>
-                                      </div>
-                                    </div>
-                          </div>
-                        </div>
-
-                        <p>This place has a maximum of 8 guests, not including infants. Pets aren't allowed.</p>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="d-grid gap-2">
-
-                  <button class="btn btn-primary" type="button">Check Availability</button>
-                </div>
-
-              </div>
-          </div>
-          <p class="text-center text-decoration-underline "><i class="fa-solid fa-flag m-3"></i>  Report this listing</p>
-          
-          </div>
-          
-        </div> -->
-
-          <!------------------- end of reservation ---------------------->
 
           <!------------------- start of rules ---------------------->
           <div id="Policies" class="py-4">
@@ -341,9 +229,9 @@
             </p>
             <div class="text-center pb-4">
               <iframe
-                src="{{ propertyById.location.location_url }}"
-                width="800"
-                height="600"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.6492153200147!2d29.914124127005856!3d31.2027382362025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c38f39fdcf4b%3A0xc479fbdffad87811!2sAl%20Shalalat%20Park!5e0!3m2!1sen!2seg!4v1712416592051!5m2!1sen!2seg"
+                width="600"
+                height="450"
                 style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
@@ -354,61 +242,87 @@
           <!------------------- end of location ---------------------->
 
           <!------------------- start of reviews ---------------------->
-          <div id="Reviews" class="py-4">
-            <h4 class="pb-3">Reviews :</h4>
-            <div
-              class="row row-cols-1 row-cols-md-2 g-4"
-              *ngFor="let r of propertyById.userReviews"
-            >
-              <div class="col">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <div class="user-rev d-flex mb-3">
-                      <div class="imgwrap rounded-circle overflow-hidden">
-                        <img
-                          [src]="r.img_Url"
-                          style="width: 70px; height: 70px"
-                        />
+          <ng-container *ngIf="propertyById.userReviews.length != 0">
+            <div id="Reviews" class="py-4">
+              <h4 class="pb-3">Reviews :</h4>
+              <div class="row d-flex align-items-center justify-content-center">
+                <div
+                  class="card col-lg-5 col-md-6 col-12 py-3 px-2 m-3 "
+                  *ngFor="let r of propertyById.userReviews"
+                >
+                  <div class="h-100">
+                    <div class="card-body">
+                      <div class="user-rev d-flex mb-3">
+                        <div class="imgwrap rounded-circle overflow-hidden">
+                          <img
+                            [src]="r.img_Url"
+                            style="width: 70px; height: 70px"
+                          />
+                        </div>
+                        <div class="px-3">
+                          <h5>{{ r.client_Name }}</h5>
+                          <p>Toronto, Canada</p>
+                        </div>
                       </div>
-                      <div class="px-3">
-                        <h5>{{ r.client_Name }}</h5>
-                        <p>Toronto, Canada</p>
-                      </div>
+                      <p>"{{ r.review }} "</p>
                     </div>
-                    <p>"{{ r.review }} "</p>
                   </div>
                 </div>
               </div>
             </div>
+          </ng-container>
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Add Review
+          </button>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+          <form [formGroup]="AddReview" >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Add Review
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body"><input type="text" formControlName="Review"></div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-primary" (click)="HandleReview(propertyById.id,$event)">
+                  Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
           </div>
           <!------------------- end of location ---------------------->
 
-          <!-- <div class="row">
-        <div class="col-12 text-end">
-          <input type="date" (ngModelChange)="onDateChange($event)" [(ngModel)]="selectedDate" />
-        </div>
-      </div>
-      <table class="table">
-        <tr>
-          <td class="days" style="width:4% " placement="top" data-container="body" ngbTooltip="2222">Room
-          </td>
-          <td *ngFor="let day of dayInMonthList" class="days">
-            {{day}}
-          </td>
-        </tr>
-        <tr *ngFor="let room of allRooms" class="days">
-          <td> {{n.roomName}}</td>
-          <td *ngFor="let day of dayInMonthList; let i= index" class="days" > 
-            <div *ngIf="checkIfBooked(day,room.roomName)" [ngClass]="(checkIfBooked(day, room.roomName))? 'booked':''">
-              <i class="fa fa-bed whiet" aria-hidden="true"  title="{{checkIfBooked(day,room.roomName).name}}"></i>
-            </div>
-            <div *ngIf="!checkIfBooked(day, room.roomName)" [ngClass]="(checkIfBooked(day, room.roomName))? 'booked':''">
-              <i class="fa fa-key handicon enabl 11" aria-hidden="true"></i> 
-            </div>
-          </td>
-        </tr>
-      
-      </table> -->
+          
           <!------------------- start of reviews ---------------------->
         </div>
       </div>
@@ -420,7 +334,7 @@
     <form [formGroup]="RentingForm">
       <div
         class="modal fade"
-        id="exampleModal"
+        id="RentFormID"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"

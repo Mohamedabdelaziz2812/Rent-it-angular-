@@ -33,7 +33,7 @@
             </div>
             
             <div class="hstack gap-3 px-5 mt-3 d-flex justify-content-center pb-4">
-                <button (click)="onLogin()"  type="submit" class="btn btn-primary d-flex justify-content-center align-items-center w-75 rounded-5 icon-link-hover">Login</button>
+                <button [disabled]="loginForm.invalid" (click)="onLogin()"  type="submit" class="btn btn-primary d-flex justify-content-center align-items-center w-75 rounded-5 icon-link-hover " >Login</button>
             </div>
             
 
