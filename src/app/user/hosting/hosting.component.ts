@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HostAddDto } from '../../Types/HostAddDto'; 
+import { UserService } from '../../services/user.service'; 
 import { Router } from '@angular/router';
 import {
   FormBuilder,
@@ -6,10 +8,10 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { attributeObject } from '../../Types/attributeObject';
-import { placeTypeDto } from '../../Types/placeTypeDto';
+import { attributeObject } from '../../Types/attributeObject'; 
+import { placeTypeDto } from '../../Types/placeTypeDto'; 
 import { propertyTypeDto } from '../../Types/propertyTypeDto';
-import { UserService } from '../../services/user.service';
+import { GovernorateDto } from '../../Types/GovernorateDto';
 
 @Component({
   selector: 'app-hosting',
@@ -25,12 +27,20 @@ export class HostingComponent {
   }
 
   attrubutesToAddDtoOptions: attributeObject[] = [
-    { id: 1, name: 'Cooking' },
-    { id: 2, name: 'Playing' },
-    { id: 3, name: 'Reading' },
-    { id: 3, name: 'kkkkk' },
-    { id: 3, name: 'qqq' },
-    { id: 3, name: 'eeeee' },
+    { id: 1, name: 'WiFi' },
+    { id: 2, name: 'Washer' },
+    { id: 3, name: 'Extra Pilows and Blankets' },
+    { id: 4, name: 'Iron' },
+    { id: 5, name: 'TV' },
+    { id: 6, name: 'Air conditioning' },
+    { id: 7, name: 'Heating' },
+    { id: 8, name: 'Carbon Monoxide Alarm' },
+    { id: 9, name: 'Kitchen Essintionals' },
+    { id: 10, name: 'Outdoor Dining Area' },
+    { id: 12, name: 'BBQ Grill' },
+    { id: 13, name: 'Security cameras' },
+    { id: 14, name: 'Smoke Alarm' },
+    { id: 15, name: 'Free Parking' }
   ];
   attrubutesToAddDto: number[] = this.attrubutesToAddDtoOptions.map(
     (obj) => obj.id
@@ -60,6 +70,20 @@ export class HostingComponent {
     { id: 15, name: 'Iglo' },
   ];
   PropetyTypeId: number[] = this.propertyTypes.map((obj) => obj.id);
+
+  Governorates: GovernorateDto[] = [
+    { id: 1, name: 'Cairo' },
+    { id: 2, name: 'Alexandrai' },
+    { id: 3, name: 'Giza' },
+    { id: 4, name: 'Shubra El-Kheima' },
+    { id: 5, name: 'Port Said' },
+    { id: 6, name: 'Suez' },
+    { id: 7, name: 'Luxor' },
+    { id: 8, name: 'Asyut' },
+    { id: 9, name: 'Aswan' },
+    { id: 10, name: 'Damietta' }
+  ];
+  GovernateId: number[] = this.Governorates.map((obj) => obj.id);
 
   HostingForm: FormGroup;
   constructor(

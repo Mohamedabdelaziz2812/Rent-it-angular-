@@ -1,17 +1,13 @@
-/* .photo{
-  background-image: url('D:/_FinalProjectAngular/Rentit--angular/src/assets/images/042bdea7-ffb3-4f6c-8346-0c9af0581a0b.webp');
+.photo{
+  background-image: url('../../../assets/images/042bdea7-ffb3-4f6c-8346-0c9af0581a0b.webp');
   background-position: center;
-  background-size: cover;  
-} */
+  background-size: cover; 
+}
 .custom-form {
     margin-top: 30px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
   }
   
   .form-label {
@@ -33,7 +29,7 @@
   }
   
   .custom-file-upload label {
-    background-color:dodgerblue;
+    background-color:#138496;
     color: #fff;
     padding: 8px 12px;
     border-radius: 5px;
@@ -54,10 +50,11 @@
     display: flex;
     justify-content:space-between;
     text-align: center;
+    margin-left: 15px;
 }
 
   .form-container {
-    /* background-image: url(D:/_FinalProjectAngular/Rentit--angular/src/assets/images/9dfaf7d6-40f2-4673-b468-7c5ab3147f86.webp);  */
+    background-image: url('../../../assets/images/VRSloganHero.webp'); 
     background-size: cover;
     background-position: center center; 
     padding: 50px 0; 
