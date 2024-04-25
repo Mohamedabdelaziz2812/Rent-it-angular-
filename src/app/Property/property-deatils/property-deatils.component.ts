@@ -41,16 +41,19 @@ export class PropertyDeatilsComponent implements OnInit {
 
     console.log('abdo');
 
-    this.PropertyServices.Rent(id, fd).subscribe((response) => {
-      console.log('eshtaa', response);
+    this.PropertyServices.Rent(id, fd).subscribe( {
+      next: () => {
+        console.log('eshtaa');
+
+      }
     });
   }
 
   constructor(
     private PropertyServices: PropertyService,
-    private activatedroute: ActivatedRoute,
     private route: ActivatedRoute,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router : Router
   ) {
     this.RentingForm = this.fb.group({
       Checkin_date: [, Validators.required],
